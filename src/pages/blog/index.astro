@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = [
+  { slug: "top-10-best-noise-cancelling-headphones", title: "Top 10 Noise-Cancelling Headphones of 2026", category: "Audio", emoji: "🎧", readTime: "12 min", excerpt: "Silence is golden. We tested 30+ headphones to find the ones that truly block out the world." },
+  { slug: "top-10-best-mechanical-keyboards", title: "Top 10 Best Mechanical Keyboards", category: "Tech", emoji: "⌨️", readTime: "10 min", excerpt: "From thocky boardwalks to clicky clack - the definitive guide to mechanical keyboards." },
+  { slug: "top-10-best-smart-watches-2026", title: "Top 10 Best Smart Watches 2026", category: "Wearables", emoji: "⌚", readTime: "14 min", excerpt: "Your wrist is your command center. Here are the watches worth your attention this year." },
+  { slug: "top-10-best-air-purifiers", title: "Top 10 Best Air Purifiers", category: "Home", emoji: "🌬️", readTime: "11 min", excerpt: "Clean air matters. We tested HEPA, ionizer, and hybrid purifiers across 15 rooms." },
+  { slug: "top-10-best-yoga-mats", title: "Top 10 Best Yoga Mats", category: "Fitness", emoji: "🧘", readTime: "9 min", excerpt: "Grip, cushion, durability - the yoga mat that matches your practice style." },
+  { slug: "top-10-best-robot-vacuums", title: "Top 10 Best Robot Vacuums", category: "Home", emoji: "🤖", readTime: "13 min", excerpt: "Set it and forget it. The robot vacuums that actually clean your floors." },
+  { slug: "top-10-best-espresso-machines", title: "Top 10 Best Espresso Machines", category: "Kitchen", emoji: "☕", readTime: "15 min", excerpt: "Cafe-quality espresso at home. From entry-level to pro-grade machines." },
+  { slug: "top-10-best-running-shoes", title: "Top 10 Best Running Shoes", category: "Fitness", emoji: "👟", readTime: "11 min", excerpt: "Every mile deserves the right foundation. Tested on roads, trails, and treadmills." },
+  { slug: "top-10-best-webcams-2026", title: "Top 10 Best Webcams 2026", category: "Tech", emoji: "📷", readTime: "8 min", excerpt: "Look sharp on every call. The webcams that turn your setup from blurry to brilliant." },
+  { slug: "top-10-best-standing-desks", title: "Top 10 Best Standing Desks", category: "Office", emoji: "🪑", readTime: "12 min", excerpt: "Stand up for your back. Desks that move as smoothly as they look." },
+  { slug: "top-10-best-blenders", title: "Top 10 Best Blenders", category: "Kitchen", emoji: "🥤", readTime: "10 min", excerpt: "From smoothies to soups - the blenders that handle everything your kitchen throws at them." },
+  { slug: "top-10-best-monitor-lights", title: "Top 10 Best Monitor Lights", category: "Tech", emoji: "💡", readTime: "7 min", excerpt: "Reduce eye strain and elevate your setup with the best bias lighting options." },
+];
+---
+<BaseLayout title="Reviews - NebulaRank">
+  <fragment slot="header"><Header /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <section class="pt-32 pb-16 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="font-sans text-4xl md:text-5xl font-bold text-white mb-4">All Reviews</h1>
+      <p class="text-gray-500 text-lg max-w-2xl">Hand-picked, rigorously tested, honestly reviewed. Every product earns its place.</p>
+    </div>
+  </section>
+
+  <section class="pb-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="card-deep group hover:border-indigo-500/40 transition-all duration-300 hover:-translate-y-1 hover:glow-indigo">
+            <div class="h-48 bg-gradient-to-br from-indigo-900/40 to-violet-900/40 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-500">{post.emoji}</div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-400">{post.category}</span>
+                <span class="text-gray-600 text-xs">{post.readTime}</span>
+              </div>
+              <h2 class="text-white font-bold text-lg mb-2 group-hover:text-indigo-400 transition-colors line-clamp-2">{post.title}</h2>
+              <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">{post.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

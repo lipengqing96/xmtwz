@@ -1,0 +1,38 @@
+---
+---
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-deep-border/60 backdrop-blur-xl bg-deep/80">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-sm group-hover:shadow-lg group-hover:shadow-indigo-500/30 transition-shadow">N</div>
+      <span class="font-bold text-white text-lg tracking-tight">Nebula<span class="text-indigo-400">Rank</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="/blog" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Reviews</a>
+      <a href="/categories" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Categories</a>
+      <a href="/about" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">About</a>
+      <a href="/contact" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Contact</a>
+      <a href="/blog" class="btn-nebula text-sm px-4 py-2">Explore</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden text-gray-400 hover:text-white" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+<div id="mobileMenu" class="fixed inset-0 z-40 bg-deep/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8">
+  <button id="closeMenu" class="absolute top-5 right-6 text-gray-400 hover:text-white" aria-label="Close">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <nav class="flex flex-col items-center gap-6">
+    <a href="/blog" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Reviews</a>
+    <a href="/categories" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Categories</a>
+    <a href="/about" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">About</a>
+    <a href="/contact" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Contact</a>
+  </nav>
+</div>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn) menuBtn.onclick = () => { mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); };
+  if (closeMenu) closeMenu.onclick = () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); };
+</script>
