@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = [
+  { slug: 'top-10-best-portable-blenders-smoothies-2026', title: 'Top 10 Best Portable Blenders for Smoothies in 2026', category: 'Home & Kitchen', time: '12 min read', date: '2026-01-15', excerpt: 'Discover the best portable blenders for on-the-go smoothies.' },
+  { slug: 'top-10-best-led-desk-lamps-work-from-home', title: 'Top 10 Best LED Desk Lamps for Working from Home in 2026', category: 'Smart Home', time: '10 min read', date: '2026-01-20', excerpt: 'Transform your workspace with the best LED desk lamps.' },
+  { slug: 'top-10-best-yoga-mats-beginners', title: 'Top 10 Best Yoga Mats for Beginners in 2026', category: 'Fitness & Health', time: '8 min read', date: '2026-02-01', excerpt: 'Start your yoga journey with the right mat.' },
+  { slug: 'top-10-best-robot-vacuums-under-300', title: 'Top 10 Best Robot Vacuums Under $300 in 2026', category: 'Smart Home', time: '15 min read', date: '2026-02-10', excerpt: 'Keep your home spotless without breaking the bank.' },
+  { slug: 'top-10-best-essential-oil-diffusers', title: 'Top 10 Best Essential Oil Diffusers in 2026', category: 'Home & Kitchen', time: '10 min read', date: '2026-02-15', excerpt: 'Create a calming atmosphere with the best diffusers.' },
+  { slug: 'top-10-best-air-fryers-small-kitchen', title: 'Top 10 Best Air Fryers for Small Kitchens in 2026', category: 'Home & Kitchen', time: '12 min read', date: '2026-02-20', excerpt: 'Compact, efficient, and delicious air fryers.' },
+  { slug: 'top-10-best-weighted-blankets-better-sleep', title: 'Top 10 Best Weighted Blankets for Better Sleep in 2026', category: 'Home & Kitchen', time: '10 min read', date: '2026-03-01', excerpt: 'Sleep better with a weighted blanket.' },
+  { slug: 'top-10-best-electric-kettles-precise-temperature', title: 'Top 10 Best Electric Kettles with Precise Temperature in 2026', category: 'Home & Kitchen', time: '11 min read', date: '2026-03-05', excerpt: 'The perfect cup demands the perfect kettle.' },
+  { slug: 'top-10-best-standing-desks-converter', title: 'Top 10 Best Standing Desk Converters in 2026', category: 'Smart Home', time: '14 min read', date: '2026-03-10', excerpt: 'Work healthier with a standing desk converter.' },
+  { slug: 'top-10-best-cordless-vacuums-lightweight', title: 'Top 10 Best Cordless Vacuums Lightweight in 2026', category: 'Smart Home', time: '13 min read', date: '2026-03-15', excerpt: 'Lightweight cordless vacuums for effortless cleaning.' },
+  { slug: 'top-10-best-skincare-fridges-mini', title: 'Top 10 Best Skincare Fridges Mini in 2026', category: 'Beauty & Personal Care', time: '9 min read', date: '2026-03-20', excerpt: 'Keep your skincare products fresh and effective.' },
+  { slug: 'top-10-best-insulated-water-bottles', title: 'Top 10 Best Insulated Water Bottles in 2026', category: 'Outdoor & Travel', time: '8 min read', date: '2026-04-01', excerpt: 'Stay hydrated in style.' },
+  { slug: 'top-10-best-massage-guns-recovery', title: 'Top 10 Best Massage Guns for Recovery in 2026', category: 'Fitness & Health', time: '12 min read', date: '2026-04-05', excerpt: 'Recover faster with the best massage guns.' },
+  { slug: 'top-10-best-coffee-makers-single-serve', title: 'Top 10 Best Single-Serve Coffee Makers in 2026', category: 'Home & Kitchen', time: '11 min read', date: '2026-04-10', excerpt: 'Perfect coffee every morning.' },
+  { slug: 'top-10-best-area-rugs-living-room', title: 'Top 10 Best Area Rugs for Living Room in 2026', category: 'Home & Kitchen', time: '10 min read', date: '2026-04-15', excerpt: 'Transform your living space.' },
+];
+---<Layout title="Product Reviews | 10Best Living" description="Expert reviews and rankings of the world finest products.">
+  <div slot="header"><Header /></div>
+  <div slot="footer"><Footer /></div>
+  <section class="pt-32 pb-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-4">All Reviews</h1>
+        <div class="section-divider mx-auto"></div>
+        <p class="text-text-muted max-w-2xl mx-auto text-lg">Expert reviews, honest opinions, and detailed comparisons to help you make the best purchase decisions.</p>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <a href={/blog/} class="card group" data-aos="fade-up">
+            <div class="aspect-[16/10] bg-gradient-to-br from-cream to-gold/20 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute top-4 left-4"><span class="badge-gold">{post.category}</span></div>
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#C9A962" stroke-width="1" class="opacity-30">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 text-xs text-muted mb-3">
+                <time>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+                <span>&middot;</span>
+                <span>{post.time}</span>
+              </div>
+              <h3 class="font-playfair text-lg font-semibold mb-2 group-hover:text-gold transition-colors line-clamp-2">{post.title}</h3>
+              <p class="text-sm text-text-muted line-clamp-2">{post.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+---<Layout>
+  <div slot="header">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainHeader">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="/" class="flex flex-col items-start">
+            <span class="font-playfair text-2xl font-bold"><span class="gold-text">10</span><span class="text-dark">Best</span></span>
+            <span class="text-xs text-muted tracking-widest uppercase font-inter">Living</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="/" class="text-dark hover:text-gold transition-colors font-medium">Home</a>
+            <a href="/blog" class="text-dark hover:text-gold transition-colors font-medium">Reviews</a>
+            <a href="/about" class="text-dark hover:text-gold transition-colors font-medium">About</a>
+            <a href="/contact" class="text-dark hover:text-gold transition-colors font-medium">Contact</a>
+            <a href="/blog" class="btn-primary text-sm">Read Reviews</a>
+          </nav>
+          <button class="md:hidden p-2" id="menuBtn" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="fixed inset-0 z-40 bg-dark/95 backdrop-blur-sm hidden flex-col items-center justify-center" id="mobileMenu">
+      <button class="absolute top-6 right-6 text-white p-2" id="closeMenu" aria-label="Close menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <nav class="flex flex-col items-center gap-8">
+        <a href="/" class="text-white text-2xl font-playfair hover:text-gold transition-colors">Home</a>
+        <a href="/blog" class="text-white text-2xl font-playfair hover:text-gold transition-colors">Reviews</a>
+        <a href="/about" class="text-white text-2xl font-playfair hover:text-gold transition-colors">About</a>
+        <a href="/contact" class="text-white text-2xl font-playfair hover:text-gold transition-colors">Contact</a>
+        <a href="/blog" class="btn-primary mt-4">Read Reviews</a>
+      </nav>
+    </div>
+  </div>
+  <script is:inline>
+    const menuBtn=document.getElementById('menuBtn'), closeMenu=document.getElementById('closeMenu'), mobileMenu=document.getElementById('mobileMenu'), header=document.getElementById('mainHeader');
+    if(menuBtn) menuBtn.onclick=()=>{mobileMenu.classList.remove('hidden');mobileMenu.classList.add('flex');};
+    if(closeMenu) closeMenu.onclick=()=>{mobileMenu.classList.add('hidden');mobileMenu.classList.remove('flex');};
+    window.addEventListener('scroll',()=>{header.classList.toggle('bg-white/90 nav-glass shadow-sm',window.scrollY>50);});
+  </script>
+</Layout>
