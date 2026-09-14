@@ -1,16 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply bg-deep text-gray-200 font-sans antialiased; }
+  body { font-family: 'Inter', sans-serif; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
 }
 @layer components {
-  .glow-indigo { box-shadow: 0 0 40px rgba(99,102,241,0.15), 0 0 80px rgba(99,102,241,0.05); }
-  .glow-text { text-shadow: 0 0 40px rgba(129,140,248,0.5); }
-  .gradient-text { background: linear-gradient(135deg,#818cf8,#22d3ee); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  .card-deep { @apply bg-deep-card border border-deep-border rounded-2xl overflow-hidden; }
-  .btn-nebula { @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40; }
-  .btn-outline-nebula { @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 border border-indigo-500/40 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400; }
+  .gold-text { color: #C9A962; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;
+    background: linear-gradient(135deg, #C9A962, #E8D5B0);
+    color: #1A1A1A; transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(201,169,98,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,169,98,0.4); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;
+    border: 2px solid #C9A962; color: #C9A962; transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(201,169,98,0.1); }
+  .card-hover { transition: all 0.3s; border: 1px solid #E8E4DD; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); border-color: #C9A962; }
+  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, #C9A962, transparent); }
 }

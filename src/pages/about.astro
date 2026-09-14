@@ -3,23 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<BaseLayout title="About - NebulaRank">
+<BaseLayout title="About | 10Best Living">
   <fragment slot="header"><Header /></fragment>
   <fragment slot="footer"><Footer /></fragment>
-
-  <section class="pt-32 pb-20 relative">
+  <section class="py-24 bg-cream">
     <div class="max-w-3xl mx-auto px-6">
-      <h1 class="font-sans text-4xl md:text-5xl font-bold text-white mb-8">About NebulaRank</h1>
-      <div class="prose prose-invert prose-lg text-gray-400 leading-relaxed">
-        <p class="text-xl text-gray-300 mb-6">We're a team of tech enthusiasts, audio engineers, and product analysts dedicated to cutting through marketing hype.</p>
+      <h1 class="font-serif text-5xl font-bold text-dark mb-8">About 10Best Living</h1>
+      <div class="section-divider w-24 mb-8"></div>
+      <div class="prose prose-lg text-text-muted leading-relaxed">
+        <p class="text-xl text-dark font-serif mb-6">We're a team of product enthusiasts, home designers, and lifestyle experts dedicated to cutting through marketing hype.</p>
         <p class="mb-6">Every product we review goes through rigorous real-world testing. We don't accept payment for positive reviews, and we never let sponsors influence our ratings. Our methodology is transparent, our data is public, and our verdicts are honest.</p>
-        <p class="mb-6">Founded in 2026, NebulaRank was born from frustration with review sites that seemed more interested in affiliate commissions than honest assessment. We wanted to build something different — a place where data drives decisions and readers can trust what they read.</p>
+        <p class="mb-6">Founded in 2026, 10Best Living was born from frustration with review sites that seemed more interested in affiliate commissions than honest assessment. We wanted to build something different — a place where data drives decisions and readers can trust what they read.</p>
         <p>Today, our team of 12 reviewers has tested over 500 products across 15 categories. Every review includes detailed specifications, comparison tables, and clear pros/cons so you can make informed decisions.</p>
       </div>
-      <div class="mt-16 grid grid-cols-3 gap-8">
-        <div class="text-center"><div class="text-4xl font-bold gradient-text mb-2">500+</div><div class="text-gray-500 text-sm">Products Tested</div></div>
-        <div class="text-center"><div class="text-4xl font-bold gradient-text mb-2">1.2k+</div><div class="text-gray-500 text-sm">Expert Reviews</div></div>
-        <div class="text-center"><div class="text-4xl font-bold gradient-text mb-2">15</div><div class="text-gray-500 text-sm">Categories</div></div>
+      <div class="mt-16 grid grid-cols-3 gap-8 text-center">
+        <div><div class="font-serif text-4xl font-bold text-gold mb-2">500+</div><div class="text-muted text-sm">Products Tested</div></div>
+        <div><div class="font-serif text-4xl font-bold text-gold mb-2">1,200+</div><div class="text-muted text-sm">Expert Reviews</div></div>
+        <div><div class="font-serif text-4xl font-bold text-gold mb-2">15</div><div class="text-muted text-sm">Categories</div></div>
       </div>
     </div>
   </section>

@@ -3,40 +3,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 ---
-<BaseLayout title="Categories - NebulaRank">
+<BaseLayout title="Categories | 10Best Living">
   <fragment slot="header"><Header /></fragment>
   <fragment slot="footer"><Footer /></fragment>
-
-  <section class="pt-32 pb-16 relative">
+  <section class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
-      <h1 class="font-sans text-4xl md:text-5xl font-bold text-white mb-4">Categories</h1>
-      <p class="text-gray-500 text-lg max-w-2xl">Explore reviews by topic. Every category is curated with care.</p>
-    </div>
-  </section>
-
-  <section class="pb-24 relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <h1 class="font-serif text-5xl font-bold text-dark mb-4">Categories</h1>
+      <div class="section-divider w-24 mb-8"></div>
+      <p class="text-text-muted text-lg max-w-2xl mb-16">Explore reviews by topic. Every category is curated with care.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {[
-          { name: 'Tech', slug: 'tech', emoji: '💻', count: 48, color: 'from-indigo-600/30 to-blue-600/30' },
-          { name: 'Audio', slug: 'audio', emoji: '🎧', count: 31, color: 'from-violet-600/30 to-purple-600/30' },
-          { name: 'Wearables', slug: 'wearables', emoji: '⌚', count: 22, color: 'from-cyan-600/30 to-teal-600/30' },
-          { name: 'Fitness', slug: 'fitness', emoji: '💪', count: 24, color: 'from-emerald-600/30 to-green-600/30' },
-          { name: 'Home', slug: 'home', emoji: '🏠', count: 36, color: 'from-amber-600/30 to-orange-600/30' },
-          { name: 'Kitchen', slug: 'kitchen', emoji: '🍳', count: 28, color: 'from-rose-600/30 to-pink-600/30' },
-          { name: 'Beauty', slug: 'beauty', emoji: '✨', count: 19, color: 'from-pink-600/30 to-fuchsia-600/30' },
-          { name: 'Travel', slug: 'travel', emoji: '✈️', count: 15, color: 'from-sky-600/30 to-blue-600/30' },
-          { name: 'Gaming', slug: 'gaming', emoji: '🎮', count: 33, color: 'from-purple-600/30 to-indigo-600/30' },
-          { name: 'Office', slug: 'office', emoji: '🪑', count: 21, color: 'from-slate-600/30 to-gray-600/30' },
-        ].map((cat) => (
-          <a href={`/blog?category=${cat.slug}`} class="card-deep p-6 text-center group hover:border-indigo-500/40 transition-all duration-300 hover:-translate-y-1">
-            <div class={`w-16 h-16 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-3xl mx-auto mb-4 group-hover:scale-110 transition-transform`}>{cat.emoji}</div>
-            <div class="text-white font-semibold">{cat.name}</div>
-            <div class="text-gray-600 text-sm mt-1">{cat.count} reviews</div>
+          {name:'Home & Kitchen',slug:'home-kitchen',emoji:'🏠',count:48},
+          {name:'Fitness & Health',slug:'fitness-health',emoji:'💪',count:36},
+          {name:'Beauty & Care',slug:'beauty-care',emoji:'✨',count:42},
+          {name:'Smart Home',slug:'smart-home',emoji:'🏡',count:31},
+          {name:'Outdoor & Travel',slug:'outdoor-travel',emoji:'✈️',count:28},
+          {name:'Office',slug:'office',emoji:'🪑',count:24},
+          {name:'Gaming',slug:'gaming',emoji:'🎮',count:19},
+          {name:'Pet',slug:'pet',emoji:'🐾',count:15},
+          {name:'Baby & Kids',slug:'baby-kids',emoji:'👶',count:12},
+          {name:'Garden',slug:'garden',emoji:'🌱',count:10},
+        ].map((cat)=>(
+          <a href={`/blog?category=${cat.slug}`} class="card-hover bg-white rounded-2xl p-6 text-center group cursor-pointer">
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">{cat.emoji}</div>
+            <div class="font-serif text-dark font-semibold">{cat.name}</div>
+            <div class="text-muted text-sm mt-1">{cat.count} reviews</div>
           </a>
         ))}
       </div>
     </div>
   </section>
 </BaseLayout>
-

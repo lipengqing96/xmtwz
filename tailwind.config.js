@@ -4,16 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        deep: '#050814',
-        'deep-card': '#0d1321',
-        'deep-border': '#1e2a42',
-        indigo: { 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5' },
-        violet: { 400: '#a78bfa', 500: '#8b5cf6' },
-        cyan: { 400: '#22d3ee', 500: '#06b6d4' },
+        gold: '#C9A962',
+        'gold-light': '#E8D5B0',
+        dark: '#1A1A1A',
+        cream: '#F7F4EF',
+        muted: '#9A9A9A',
+        'text-muted': '#6B6B6B',
+        emeraldDark: '#2D5A4C',
+        border: '#E8E4DD',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
     },
   },

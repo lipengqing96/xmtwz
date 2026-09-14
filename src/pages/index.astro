@@ -3,151 +3,112 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<BaseLayout title="NebulaRank - Next-Gen Product Reviews">
+<BaseLayout title="10Best Living | Curated Luxury Product Reviews">
   <fragment slot="header"><Header /></fragment>
   <fragment slot="footer"><Footer /></fragment>
 
-  <!-- Hero -->
-  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/30 via-deep to-deep"></div>
-    <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="relative max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center">
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-cream">
+    <div class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-8">
-          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-          Data-Driven Reviews Since 2026
-        </div>
-        <h1 class="font-sans text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-          Test.<br/><span class="gradient-text">Trust.</span><br/>Rank.
-        </h1>
-        <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-lg">
-          We rigorously test every product so you don't waste money on hype. Unbiased rankings, real data, honest verdicts.
-        </p>
+        <span class="inline-block font-sans text-xs font-semibold tracking-[0.3em] text-gold uppercase mb-6 border border-gold/30 px-4 py-2 rounded-full">Trusted Reviews Since 2026</span>
+        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-dark leading-[1.1] tracking-[-0.02em] mb-6">Discover the World's<br/>Best Products</h1>
+        <p class="font-sans text-lg text-text-muted leading-relaxed mb-10 max-w-lg">Curated reviews, expert insights, and hand-picked picks for discerning lifestyles.</p>
         <div class="flex flex-wrap gap-4">
-          <a href="/blog" class="btn-nebula">Read Reviews</a>
-          <a href="/categories" class="btn-outline-nebula">Browse Topics</a>
+          <a href="/blog" class="btn-primary">View Our Picks</a>
+          <a href="/categories" class="btn-outline">Browse Categories</a>
         </div>
       </div>
       <div class="relative hidden lg:block">
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-4 mt-8">
-            <a href="/blog?category=tech" class="card-deep p-4 group block hover:border-indigo-500/40 transition-colors">
-              <div class="h-32 rounded-xl bg-gradient-to-br from-indigo-600/30 to-violet-600/30 mb-3 flex items-center justify-center text-4xl">🖥️</div>
-              <div class="text-white font-semibold group-hover:text-indigo-400 transition-colors">Tech</div>
-              <div class="text-gray-500 text-sm">48 Reviews</div>
+            <a href="/blog?category=home-kitchen" class="rounded-2xl overflow-hidden shadow-card h-48 relative group block">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="eager" />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-serif text-lg font-semibold text-white">Kitchen</span>
             </a>
-            <a href="/blog?category=lifestyle" class="card-deep p-4 group block hover:border-indigo-500/40 transition-colors">
-              <div class="h-24 rounded-xl bg-gradient-to-br from-cyan-600/30 to-indigo-600/30 mb-3 flex items-center justify-center text-4xl">🏠</div>
-              <div class="text-white font-semibold group-hover:text-indigo-400 transition-colors">Lifestyle</div>
-              <div class="text-gray-500 text-sm">36 Reviews</div>
+            <a href="/blog?category=fitness-health" class="rounded-2xl overflow-hidden shadow-card h-32 relative group block">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Wellness" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-serif text-lg font-semibold text-white">Wellness</span>
             </a>
           </div>
           <div class="space-y-4">
-            <a href="/blog?category=fitness" class="card-deep p-4 group block hover:border-indigo-500/40 transition-colors">
-              <div class="h-24 rounded-xl bg-gradient-to-br from-violet-600/30 to-pink-600/30 mb-3 flex items-center justify-center text-4xl">💪</div>
-              <div class="text-white font-semibold group-hover:text-indigo-400 transition-colors">Fitness</div>
-              <div class="text-gray-500 text-sm">24 Reviews</div>
+            <a href="/blog?category=smart-home" class="rounded-2xl overflow-hidden shadow-card h-32 relative group block">
+              <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80" alt="Smart Home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-serif text-lg font-semibold text-white">Smart Home</span>
             </a>
-            <a href="/blog?category=audio" class="card-deep p-4 group block hover:border-indigo-500/40 transition-colors">
-              <div class="h-32 rounded-xl bg-gradient-to-br from-indigo-600/30 to-cyan-600/30 mb-3 flex items-center justify-center text-4xl">🎧</div>
-              <div class="text-white font-semibold group-hover:text-indigo-400 transition-colors">Audio</div>
-              <div class="text-gray-500 text-sm">31 Reviews</div>
+            <a href="/blog?category=beauty-care" class="rounded-2xl overflow-hidden shadow-card h-48 relative group block">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Beauty" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent"></div>
+              <span class="absolute bottom-3 left-4 font-serif text-lg font-semibold text-white">Beauty</span>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-gray-600">
-      <div class="flex items-center gap-8 text-sm">
-        <span class="flex items-center gap-2"><span class="text-indigo-400 font-bold text-lg">500+</span> Products Tested</span>
-        <span class="flex items-center gap-2"><span class="text-indigo-400 font-bold text-lg">1.2k+</span> Expert Reviews</span>
-        <span class="flex items-center gap-2"><span class="text-indigo-400 font-bold text-lg">15</span> Categories</span>
+    <div class="absolute bottom-0 left-0 right-0 flex flex-col items-center gap-2 pb-8">
+      <div class="flex items-center gap-8 font-sans text-xs text-muted">
+        <span class="flex items-center gap-2"><span class="text-gold font-bold">500+</span> Products Tested</span>
+        <span class="flex items-center gap-2"><span class="text-gold font-bold">1,200+</span> Expert Reviews</span>
+        <span class="flex items-center gap-2"><span class="text-gold font-bold">15</span> Categories</span>
       </div>
-      <div class="animate-bounce"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+      <div class="animate-bounce mt-2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A962" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
     </div>
   </section>
 
-  <!-- Featured Reviews -->
-  <section class="py-24 relative">
+  <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between mb-12">
-        <div>
-          <h2 class="font-sans text-3xl md:text-4xl font-bold text-white mb-2">Featured Reviews</h2>
-          <div class="w-16 h-0.5 bg-gradient-to-r from-indigo-500 to-transparent"></div>
-        </div>
-        <a href="/blog" class="btn-outline-nebula text-sm px-4 py-2">View All</a>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="/blog/top-10-best-noise-cancelling-headphones" class="card-deep group hover:border-indigo-500/40 transition-all duration-300 hover:glow-indigo">
-          <div class="h-48 bg-gradient-to-br from-indigo-900/50 to-violet-900/50 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-500">🎧</div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-500/20 text-indigo-400">Audio</span><span class="text-gray-600 text-xs">· 12 min read</span></div>
-            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-indigo-400 transition-colors">Top 10 Noise-Cancelling Headphones of 2026</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Silence is golden. We tested 30+ headphones to find the ones that truly block out the world.</p>
-            <div class="mt-4 flex items-center gap-1 text-indigo-400 text-sm font-medium"><span>Read review</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-        </a>
-        <a href="/blog/top-10-best-mechanical-keyboards" class="card-deep group hover:border-indigo-500/40 transition-all duration-300 hover:glow-indigo">
-          <div class="h-48 bg-gradient-to-br from-cyan-900/50 to-indigo-900/50 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-500">⌨️</div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="px-2 py-0.5 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400">Tech</span><span class="text-gray-600 text-xs">· 10 min read</span></div>
-            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-indigo-400 transition-colors">Top 10 Best Mechanical Keyboards</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">From thocky boardwalks to clicky clack - the definitive guide to mechanical keyboards.</p>
-            <div class="mt-4 flex items-center gap-1 text-indigo-400 text-sm font-medium"><span>Read review</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-        </a>
-        <a href="/blog/top-10-best-smart-watches-2026" class="card-deep group hover:border-indigo-500/40 transition-all duration-300 hover:glow-indigo">
-          <div class="h-48 bg-gradient-to-br from-violet-900/50 to-pink-900/50 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-500">⌚</div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="px-2 py-0.5 rounded-full text-xs font-medium bg-violet-500/20 text-violet-400">Wearables</span><span class="text-gray-600 text-xs">· 14 min read</span></div>
-            <h3 class="text-white font-bold text-lg mb-2 group-hover:text-indigo-400 transition-colors">Top 10 Best Smart Watches 2026</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">Your wrist is your command center. Here are the watches worth your attention this year.</p>
-            <div class="mt-4 flex items-center gap-1 text-indigo-400 text-sm font-medium"><span>Read review</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <section class="py-24 bg-deep-card/50 relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="font-sans text-3xl md:text-4xl font-bold text-white mb-3">Browse by Category</h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mx-auto"></div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="text-center mb-16"><h2 class="font-serif text-4xl md:text-5xl font-bold text-dark mb-4">Browse by Category</h2><div class="section-divider w-24 mx-auto"></div></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {[
-          { name: 'Tech', slug: 'tech', emoji: '💻', count: 48 },
-          { name: 'Audio', slug: 'audio', emoji: '🎧', count: 31 },
-          { name: 'Wearables', slug: 'wearables', emoji: '⌚', count: 22 },
-          { name: 'Fitness', slug: 'fitness', emoji: '💪', count: 24 },
-          { name: 'Home', slug: 'home', emoji: '🏠', count: 36 },
-          { name: 'Kitchen', slug: 'kitchen', emoji: '🍳', count: 28 },
-          { name: 'Beauty', slug: 'beauty', emoji: '✨', count: 19 },
-          { name: 'Travel', slug: 'travel', emoji: '✈️', count: 15 },
-          { name: 'Gaming', slug: 'gaming', emoji: '🎮', count: 33 },
-          { name: 'Office', slug: 'office', emoji: '🪑', count: 21 },
-        ].map((cat) => (
-          <a href={`/blog?category=${cat.slug}`} class="card-deep p-5 text-center group hover:border-indigo-500/40 transition-all duration-300 hover:-translate-y-1">
-            <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">{cat.emoji}</div>
-            <div class="text-white font-semibold text-sm">{cat.name}</div>
-            <div class="text-gray-600 text-xs mt-1">{cat.count} reviews</div>
+          {name:'Home & Kitchen',slug:'home-kitchen',count:48,img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=75'},
+          {name:'Fitness & Health',slug:'fitness-health',count:36,img:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=75'},
+          {name:'Beauty & Care',slug:'beauty-care',count:42,img:'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&q=75'},
+          {name:'Smart Home',slug:'smart-home',count:31,img:'https://images.unsplash.com/photo-1558002038-1055907df827?w=400&q=75'},
+          {name:'Outdoor & Travel',slug:'outdoor-travel',count:28,img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&q=75'},
+        ].map((cat)=>(
+          <a href={`/blog?category=${cat.slug}`} class="card-hover rounded-2xl overflow-hidden group cursor-pointer">
+            <div class="h-40 overflow-hidden"><img src={cat.img} alt={cat.name} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy"/></div>
+            <div class="p-5 bg-white"><div class="font-serif text-lg font-bold text-dark group-hover:text-gold transition-colors">{cat.name}</div><div class="text-sm text-muted mt-1">{cat.count} reviews</div></div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Newsletter -->
-  <section class="py-24 relative">
+  <section class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between mb-12"><div><h2 class="font-serif text-4xl font-bold text-dark mb-2">Editor's Picks</h2><div class="section-divider w-16"></div></div><a href="/blog" class="btn-outline text-sm px-4 py-2">View All</a></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {slug:'top-10-best-portable-blenders-smoothies-2026',title:'Top 10 Best Portable Blenders for Smoothies 2026',cat:'Kitchen',emoji:'🥤',time:'12 min',excerpt:'Blend anywhere, anytime. We tested 20+ portable blenders to find the ones that truly deliver.'},
+          {slug:'top-10-best-robot-vacuums-under-300',title:'Top 10 Best Robot Vacuums Under $300',cat:'Smart Home',emoji:'🤖',time:'14 min',excerpt:'Clean floors without lifting a finger. The best robot vacuums that actually work.'},
+          {slug:'top-10-best-espresso-machines',title:'Top 10 Best Espresso Machines for Home',cat:'Kitchen',emoji:'☕',time:'15 min',excerpt:'Cafe-quality espresso at home. From entry-level to pro-grade machines.'},
+        ].map((post)=>(
+          <a href={`/blog/${post.slug}`} class="card-hover bg-white rounded-2xl overflow-hidden group cursor-pointer">
+            <div class="h-52 bg-gradient-to-br from-gold/10 to-cream flex items-center justify-center text-7xl group-hover:scale-105 transition-transform duration-500">{post.emoji}</div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-gold"></span><span class="text-xs font-semibold text-gold uppercase tracking-wider">{post.cat}</span><span class="text-gray-400 text-xs ml-auto">{post.time}</span></div>
+              <h3 class="font-serif text-xl font-bold text-dark mb-2 group-hover:text-gold transition-colors line-clamp-2">{post.title}</h3>
+              <p class="text-text-muted text-sm leading-relaxed line-clamp-3">{post.excerpt}</p>
+              <div class="mt-4 flex items-center gap-1 text-gold text-sm font-medium"><span>Read review</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-gradient-to-br from-gold via-gold-light to-cream">
     <div class="max-w-2xl mx-auto px-6 text-center">
-      <h2 class="font-sans text-3xl md:text-4xl font-bold text-white mb-4">Stay in the Loop</h2>
-      <p class="text-gray-500 mb-8">Get our best reviews and deals delivered to your inbox. No spam, ever.</p>
-      <form class="flex gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thanks for subscribing!')">
-        <input type="email" placeholder="you@example.com" required class="flex-1 px-4 py-3 rounded-xl bg-deep-card border border-deep-border text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors" />
-        <button type="submit" class="btn-nebula whitespace-nowrap">Subscribe</button>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-dark mb-4">Join 50,000+ Discerning Shoppers</h2>
+      <p class="text-dark/70 mb-8">Get our best reviews and exclusive deals delivered weekly. No spam, ever.</p>
+      <form class="flex gap-3 max-w-md mx-auto" onsubmit="event.preventDefault();alert('Thanks for subscribing!')">
+        <input type="email" placeholder="you@example.com" required class="flex-1 px-4 py-3 rounded-xl border-2 border-gold/30 bg-white text-dark placeholder-gray-400 focus:outline-none focus:border-gold transition-colors"/>
+        <button type="submit" class="btn-primary whitespace-nowrap bg-dark text-gold-light hover:bg-dark/90">Subscribe</button>
       </form>
+      <p class="text-xs text-dark/50 mt-4">By subscribing you agree to our Privacy Policy.</p>
     </div>
   </section>
 </BaseLayout>

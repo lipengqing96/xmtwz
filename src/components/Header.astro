@@ -1,38 +1,37 @@
 ---
 ---
-<header class="fixed top-0 left-0 right-0 z-50 border-b border-deep-border/60 backdrop-blur-xl bg-deep/80">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 group">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white font-bold text-sm group-hover:shadow-lg group-hover:shadow-indigo-500/30 transition-shadow">N</div>
-      <span class="font-bold text-white text-lg tracking-tight">Nebula<span class="text-indigo-400">Rank</span></span>
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-border" id="mainHeader">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="flex flex-col items-start">
+      <span class="font-serif text-2xl font-bold leading-none"><span class="gold-text">10</span><span>Best</span></span>
+      <span class="text-xs text-muted tracking-[0.2em] uppercase font-sans">Living</span>
     </a>
     <nav class="hidden md:flex items-center gap-8">
-      <a href="/blog" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Reviews</a>
-      <a href="/categories" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Categories</a>
-      <a href="/about" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">About</a>
-      <a href="/contact" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">Contact</a>
-      <a href="/blog" class="btn-nebula text-sm px-4 py-2">Explore</a>
+      <a href="/" class="text-dark hover:text-gold transition-colors font-medium text-sm">Home</a>
+      <a href="/categories" class="text-dark hover:text-gold transition-colors font-medium text-sm">Categories</a>
+      <a href="/about" class="text-dark hover:text-gold transition-colors font-medium text-sm">About</a>
+      <a href="/contact" class="text-dark hover:text-gold transition-colors font-medium text-sm">Contact</a>
+      <a href="/blog" class="btn-primary text-sm">Read Reviews</a>
     </nav>
-    <button id="menuBtn" class="md:hidden text-gray-400 hover:text-white" aria-label="Menu">
+    <button id="menuBtn" class="md:hidden p-2 text-dark" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
 </header>
-<div id="mobileMenu" class="fixed inset-0 z-40 bg-deep/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8">
-  <button id="closeMenu" class="absolute top-5 right-6 text-gray-400 hover:text-white" aria-label="Close">
+<div id="mobileMenu" class="fixed inset-0 z-40 bg-dark/95 backdrop-blur-sm hidden flex-col items-center justify-center gap-8">
+  <button id="closeMenu" class="absolute top-5 right-6 text-white p-2" aria-label="Close">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <nav class="flex flex-col items-center gap-6">
-    <a href="/blog" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Reviews</a>
-    <a href="/categories" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Categories</a>
-    <a href="/about" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">About</a>
-    <a href="/contact" class="text-white text-xl font-semibold hover:text-indigo-400 transition-colors">Contact</a>
+    <a href="/" class="text-white text-2xl font-serif hover:text-gold transition-colors">Home</a>
+    <a href="/categories" class="text-white text-2xl font-serif hover:text-gold transition-colors">Categories</a>
+    <a href="/about" class="text-white text-2xl font-serif hover:text-gold transition-colors">About</a>
+    <a href="/contact" class="text-white text-2xl font-serif hover:text-gold transition-colors">Contact</a>
+    <a href="/blog" class="btn-primary mt-4">Read Reviews</a>
   </nav>
 </div>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const closeMenu = document.getElementById('closeMenu');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn) menuBtn.onclick = () => { mobileMenu.classList.remove('hidden'); mobileMenu.classList.add('flex'); };
-  if (closeMenu) closeMenu.onclick = () => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); };
+<script is:inline>
+  const menuBtn=document.getElementById('menuBtn'), closeMenu=document.getElementById('closeMenu'), mobileMenu=document.getElementById('mobileMenu');
+  if(menuBtn) menuBtn.onclick=()=>{mobileMenu.classList.remove('hidden');mobileMenu.classList.add('flex');};
+  if(closeMenu) closeMenu.onclick=()=>{mobileMenu.classList.add('hidden');mobileMenu.classList.remove('flex');};
 </script>

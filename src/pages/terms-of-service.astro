@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Terms of Service | 10Best Living">
+  <fragment slot="header"><Header /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+  <section class="py-24 bg-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="font-serif text-4xl font-bold text-dark mb-8">Terms of Service</h1>
+      <div class="section-divider w-24 mb-8"></div>
+      <div class="prose prose-lg text-text-muted leading-relaxed">
+        <p class="mb-4"><strong class="text-dark">Last updated:</strong> January 2026</p>
+        <h2 class="font-serif text-xl font-bold text-dark mt-8 mb-4">1. Acceptance of Terms</h2>
+        <p class="mb-4">By accessing 10Best Living, you agree to these terms. If you disagree, please do not use our site.</p>
+        <h2 class="font-serif text-xl font-bold text-dark mt-8 mb-4">2. Content</h2>
+        <p class="mb-4">All reviews are based on independent testing. We reserve the right to update reviews as products change.</p>
+        <h2 class="font-serif text-xl font-bold text-dark mt-8 mb-4">3. Affiliate Disclosure</h2>
+        <p class="mb-4">We earn commissions from qualifying purchases. This does not affect our editorial independence or ratings.</p>
+        <h2 class="font-serif text-xl font-bold text-dark mt-8 mb-4">4. Limitation of Liability</h2>
+        <p class="mb-4">We are not liable for any damages arising from your use of this site or reliance on our reviews.</p>
+        <h2 class="font-serif text-xl font-bold text-dark mt-8 mb-4">5. Changes</h2>
+        <p class="mb-4">We may update these terms. Continued use constitutes acceptance of updated terms.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
