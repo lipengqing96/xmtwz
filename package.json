@@ -12,7 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.0",
+    "astro": "^7.3.2",
     "lucide-react": "^1.45.0"
   },
   "allowScripts": {
