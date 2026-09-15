@@ -1,80 +1,48 @@
 ---
-layout: '../../layouts/BaseLayout.astro'
+layout: "../../layouts/BaseLayout.astro"
 title: "Review | 10Best Living"
 
 export async function getStaticPaths() {
   return [
-    { params: { slug: 'top-10-best-portable-blenders-smoothies-2026' } },
+    { params: { slug: "top-10-best-portable-blenders-smoothies-2026" } },
+    { params: { slug: "top-10-best-led-desk-lamps-work-from-home" } },
+    { params: { slug: "top-10-best-yoga-mats-beginners" } },
+    { params: { slug: "top-10-best-robot-vacuums-under-300" } },
+    { params: { slug: "top-10-best-essential-oil-diffusers" } },
+    { params: { slug: "top-10-best-air-fryers-small-kitchen" } },
+    { params: { slug: "top-10-best-weighted-blankets-better-sleep" } },
+    { params: { slug: "top-10-best-electric-kettles-precise-temperature" } },
+    { params: { slug: "top-10-best-standing-desks-converter" } },
+    { params: { slug: "top-10-best-cordless-vacuums-lightweight" } },
+    { params: { slug: "top-10-best-skincare-fridges-mini" } },
+    { params: { slug: "top-10-best-insulated-water-bottles" } },
+    { params: { slug: "top-10-best-massage-guns-recovery" } },
+    { params: { slug: "top-10-best-coffee-makers-single-serve" } },
+    { params: { slug: "top-10-best-area-rugs-living-room" } },
   ];
 }
 
 const { slug } = Astro.params;
 
-const posts = {
-  'top-10-best-portable-blenders-smoothies-2026': {
-    title: 'Top 10 Best Portable Blenders for Smoothies 2026',
-    category: 'Kitchen',
-    readTime: '12 min',
-    date: '2026-01-15',
-    content: `
-## Why Portable Blenders Matter
-
-Blend anywhere, anytime. We tested 20+ portable blenders to find the ones that truly deliver.
-
-## Our Testing Methodology
-
-We spent 6 months testing 22 portable blenders across multiple environments: home kitchen, office, gym, and outdoor settings.
-
-## Top Picks
-
-### 1. BlenderBottle PowerMix Pro - Best Overall
-**Price:**  | **Score: 9.5/10**
-
-The gold standard continues to evolve. Improved motor reduces noise by 40% more than previous models.
-
-**Pros:** Industry-leading performance, Exceptional build quality, 40-hour battery
-**Cons:** Premium price, Touch controls can be finicky
-
-### 2. NutriBullet Go - Best Comfort
-**Price:**  | **Score: 9.3/10**
-
-Lighter materials and adaptable fit. Perfect for on-the-go blending.
-
-**Pros:** Most comfortable in class, Excellent blending power, Spacious cup
-**Cons:** Expensive, Larger carrying case
-
-### 3. Magic Bullet - Best Value
-**Price:**  | **Score: 8.5/10**
-
-**Pros:** Excellent value, Proven performance, Physical buttons
-**Cons:** Older design, No spatial audio
-
-## Quick Comparison
-
-| Model | Price | Score |
-|-------|-------|-------|
-| BlenderBottle PowerMix |  | 9.5 |
-| NutriBullet Go |  | 9.3 |
-| Magic Bullet |  | 8.5 |
-
-## Final Verdict
-
-**BlenderBottle PowerMix Pro** is the clear winner for most people. Budget buyers should consider the **Magic Bullet**.
-
-*Disclosure: We may earn a commission from qualifying purchases.*
-`
-  },
-};
+// Load posts from individual JSON files
+const posts = {};
+const postFiles = import.meta.glob("../../data/posts/*.json", { eager: true });
+for (const [path, module] of Object.entries(postFiles)) {
+  const filename = path.split("/").pop();
+  const postSlug = filename.replace(".json", "");
+  posts[postSlug] = module.default;
+}
 
 const post = posts[slug];
-if (!post) Astro.redirect('/404');
+if (!post) Astro.redirect("/404");
 ---
 
 <article class="pt-28 pb-20 relative">
   <div class="max-w-3xl mx-auto px-6">
+    <img src="{post.featuredImg}" alt="{post.title}" class="w-full h-64 md:h-80 object-cover rounded-2xl mb-8 shadow-card" loading="eager"/>
     <div class="flex items-center gap-3 mb-6">
-      <span class="px-3 py-1 rounded-full text-sm font-medium bg-amber-500/20 text-amber-400">{post.category}</span>
-      <span class="text-gray-600">{post.readTime} read &middot; {post.date}</span>
+      <span class="px-3 py-1 rounded-full text-sm font-medium bg-gold/20 text-gold">{post.category}</span>
+      <span class="text-gray-600">{post.readTime} read · {post.date}</span>
     </div>
     <h1 class="font-serif text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">{post.title}</h1>
     <div class="w-16 h-1 bg-gradient-to-r from-gold to-gold-light rounded-full mb-8"></div>
