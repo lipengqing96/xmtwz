@@ -1,11 +1,7 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+layout: '../../layouts/BaseLayout.astro'
+title: "Reviews | 10Best Living"
 ---
-<BaseLayout title="Reviews | 10Best Living">
-  <fragment slot="header"><Header /></fragment>
-  <fragment slot="footer"><Footer /></fragment>
   <section class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
       <h1 class="font-serif text-5xl font-bold text-dark mb-4">All Reviews</h1>
@@ -45,4 +41,3 @@ import Footer from '../../components/Footer.astro';
       </div>
     </div>
   </section>
-</BaseLayout>

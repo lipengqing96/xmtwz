@@ -1,11 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+layout: '../layouts/BaseLayout.astro'
+title: "404 - 10Best Living"
 ---
-<BaseLayout title="404 - 10Best Living">
-  <fragment slot="header"><Header /></fragment>
-  <fragment slot="footer"><Footer /></fragment>
+
+  
   <section class="min-h-screen flex items-center justify-center bg-cream pt-20">
     <div class="text-center px-6">
       <div class="text-8xl mb-6">🌟</div>
@@ -14,4 +12,3 @@ import Footer from "../components/Footer.astro";
       <a href="/" class="btn-primary">Return Home</a>
     </div>
   </section>
-</BaseLayout>
