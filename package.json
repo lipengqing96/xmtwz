@@ -14,12 +14,12 @@
   "dependencies": {
     "aos": "^2.3.4",
     "astro": "^4.15.0",
-    "lucide-react": "^1.64.0"
+    "autoprefixer": "^10.6.2",
+    "lucide-react": "^1.64.0",
+    "postcss": "^8.5.32"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "tailwindcss": "^4.3.3"
   }
 }
-
-
