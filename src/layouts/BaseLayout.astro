@@ -1,0 +1,117 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  path?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = '/og-image.jpg',
+  path = '/',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://10bestliving.com';
+const canonical = `${siteUrl}${path}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="lhverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:site_name" content="10Best Living" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+    <title>{title}</title>
+    <!-- System fonts — no external CDN needed -->
+    <style>
+      @font-face { font-family: 'Inter'; src: local('Segoe UI'), local('Arial'); font-display: swap; }
+      @font-face { font-family: 'Playfair Display'; src: local('Georgia'), local('Times New Roman'); font-display: swap; }
+      [data-aos]{opacity:0;transition-property:opacity,transform;transition-duration:.7s;transition-timing-function:ease-out}
+      [data-aos].aos-animate{opacity:1}
+      [data-aos=fade-up]{transform:translateY(30px)}
+      [data-aos=fade-down]{transform:translateY(-30px)}
+      [data-aos=fade-left]{transform:translateX(30px)}
+      [data-aos=fade-right]{transform:translateX(-30px)}
+      [data-aos=zoom-in]{transform:scale(.9)}
+      [data-aos=zoom-out]{transform:scale(1.1)}
+    </style>
+  </head>
+  <body class="bg-cream text-primary min-h-screen flex flex-col">
+    <div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gold z-50" style="width: 0%"></div>
+    <Header />
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <button id="back-to-top" class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full gold-btn flex items-center justify-center z-40 shadow-lg" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 bg-dark text-white px-6 py-4 z-50 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xl">
+      <p class="text-sm text-gray-300">We use cookies to enhance your experience and analyze site traffic. By continuing, you agree to our <a href="/privacy-policy" class="text-gold underline">Privacy Policy</a>.</p>
+      <button id="cookie-accept" class="gold-btn px-6 py-2 rounded-lg text-sm whitespace-nowrap">Accept</button>
+    </div>
+    <script>
+      // Local AOS replacement — no external CDN needed
+      (function(){
+        const els = document.querySelectorAll('[data-aos]');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              const el = e.target;
+              const delay = parseInt(el.dataset.aosDelay) || 0;
+              setTimeout(() => el.classList.add('aos-animate'), delay);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1 });
+        els.forEach(el => observer.observe(el));
+      })();
+      // Reading progress bar
+      const bar = document.getElementById('reading-progress');
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+      }, { passive: true });
+      // Back to top button
+      const btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (btn) btn.classList.toggle('hidden', window.scrollY < 400);
+      }, { passive: true });
+      btn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      // Cookie banner
+      const banner = document.getElementById('cookie-banner');
+      const accept = document.getElementById('cookie-accept');
+      if (banner && accept && !localStorage.getItem('cookiesAccepted')) {
+        banner.classList.remove('hidden');
+        accept.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          banner.classList.add('hidden');
+        });
+      }
+    </script>
+    <slot name="jsonld" />
+  </body>
+</html>

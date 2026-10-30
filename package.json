@@ -1,0 +1,25 @@
+{
+  "name": "10bestliving",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "astro": "^4.15.0",
+    "lucide-react": "^1.64.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
+
+

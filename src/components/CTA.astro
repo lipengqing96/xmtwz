@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'gold' | 'outline' | 'white';
+  class?: string;
+}
+
+const { href, label, variant = 'gold', class: extraClass = '' } = Astro.props;
+
+const variants = {
+  gold: 'gold-btn',
+  outline: 'gold-outline-btn',
+  white: 'bg-white text-dark hover:bg-gray-100 transition-colors px-6 py-3 rounded-xl font-semibold',
+};
+---
+
+<a href={href} class={`${variants[variant]} ${extraClass}`}>{label}</a>

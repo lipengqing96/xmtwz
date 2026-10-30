@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const reviews = [
+  { slug: 'top-10-best-portable-blenders-smoothies-2026', image: 'blender.jpg', title: 'Top 10 Best Portable Blenders for Smoothies in 2026', category: 'Home & Kitchen', emoji: '🥤', readTime: '5 min', badge: 'Editor\'s Choice' },
+  { slug: 'top-10-best-led-desk-lamps-work-from-home', image: 'led-lamp.jpg', title: 'Top 10 Best LED Desk Lamps for Working From Home in 2026', category: 'Home & Office', emoji: '💡', readTime: '6 min', badge: null },
+  { slug: 'top-10-best-yoga-mats-beginners', image: 'yoga-mat.jpg', title: 'Top 10 Best Yoga Mats for Beginners in 2026', category: 'Fitness & Health', emoji: '🧘', readTime: '5 min', badge: 'Best Value' },
+  { slug: 'top-10-best-robot-vacuums-under-300', image: 'robot-vacuum.jpg', title: 'Top 10 Best Robot Vacuums Under $300 in 2026', category: 'Smart Home', emoji: '🤖', readTime: '7 min', badge: null },
+  { slug: 'top-10-best-essential-oil-diffusers', image: 'essential-oil.jpg', title: 'Top 10 Best Essential Oil Diffusers in 2026', category: 'Home & Wellness', emoji: '🌿', readTime: '5 min', badge: null },
+  { slug: 'top-10-best-air-fryers-small-kitchen', image: 'air-fryer.jpg', title: 'Top 10 Best Air Fryers for Small Kitchens in 2026', category: 'Home & Kitchen', emoji: '🍟', readTime: '6 min', badge: 'Top Pick' },
+  { slug: 'top-10-best-weighted-blankets-better-sleep', image: 'weighted-blanket.jpg', title: 'Top 10 Best Weighted Blankets for Better Sleep in 2026', category: 'Bedroom', emoji: '🛏️', readTime: '5 min', badge: null },
+  { slug: 'top-10-best-electric-kettles-precise-temperature', image: 'kettle.jpg', title: 'Top 10 Best Electric Kettles with Precise Temperature Control in 2026', category: 'Home & Kitchen', emoji: '☕', readTime: '6 min', badge: null },
+  { slug: 'top-10-best-standing-desks-converter', image: 'standing-desk.jpg', title: 'Top 10 Best Standing Desk Converters in 2026', category: 'Home & Office', emoji: '🪑', readTime: '6 min', badge: 'Premium Pick' },
+  { slug: 'top-10-best-cordless-vacuums-lightweight', image: 'cordless-vacuum.jpg', title: 'Top 10 Best Cordless Vacuums (Lightweight) in 2026', category: 'Smart Home', emoji: '🧹', readTime: '7 min', badge: null },
+  { slug: 'top-10-best-skincare-fridges-mini', image: 'skincare-fridge.jpg', title: 'Top 10 Best Mini Skincare Fridges in 2026', category: 'Beauty', emoji: '❄️', readTime: '5 min', badge: null },
+  { slug: 'top-10-best-insulated-water-bottles', image: 'water-bottle.jpg', title: 'Top 10 Best Insulated Water Bottles in 2026', category: 'Outdoor & Travel', emoji: '🧊', readTime: '5 min', badge: 'Our Pick' },
+  { slug: 'top-10-best-massage-guns-recovery', image: 'massage-gun.jpg', title: 'Top 10 Best Massage Guns for Muscle Recovery in 2026', category: 'Fitness & Health', emoji: '💆', readTime: '6 min', badge: null },
+  { slug: 'top-10-best-coffee-makers-single-serve', image: 'coffee.jpg', title: 'Top 10 Best Single-Serve Coffee Makers in 2026', category: 'Home & Kitchen', emoji: '☕', readTime: '6 min', badge: null },
+  { slug: 'top-10-best-area-rugs-living-room', image: 'rug.jpg', title: 'Top 10 Best Area Rugs for Living Room in 2026', category: 'Home & Decor', emoji: '🏠', readTime: '5 min', badge: null },
+];
+
+const description = "Expert reviews and rankings of premium lifestyle products. From kitchen essentials to fitness gear, discover the best picks for discerning tastes.";
+---
+
+<BaseLayout title="10Best Living — Curated Product Reviews & Rankings" description={description} path="/blog">
+  <div class="bg-card">
+    <!-- Hero -->
+    <div class="py-20 lg:py-28 bg-gradient-to-br from-cream via-cream-dark to-cream text-center">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8" data-aos="fade-up">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-gold"></span>
+          <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold">Expert Reviews</span>
+        </div>
+        <h1 class="font-serif text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+          The Most <span class="gold-gradient-text">Trusted</span> Product Reviews
+        </h1>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
+          Every review is independently researched and tested. We only recommend products we truly believe in — because your trust matters more than any commission.
+        </p>
+      </div>
+    </div>
+
+    <!-- Review Grid -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {reviews.map((review, i) => (
+          <a
+            href={`/blog/${review.slug}`}
+            class="bg-cream rounded-2xl overflow-hidden hover:shadow-elevated transition-all duration-300 group flex flex-col"
+            data-aos="fade-up"
+            data-aos-delay={i * 50}
+          >
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-stone-100 group-hover:scale-105 transition-transform duration-500"></div>
+              <div class="absolute inset-0">
+              <img src={`/images/${review.image}`} alt={`${review.title}`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              {review.badge && (
+                <div class="absolute top-4 left-4">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-gold text-dark text-xs font-bold shadow-lg">
+                    {review.badge}
+                  </span>
+                </div>
+              )}
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary">
+                  {review.category}
+                </span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1">
+                {review.title}
+              </h2>
+              <div class="flex items-center justify-between pt-4 border-t border-border">
+                <span class="text-xs text-text-silent">{review.readTime} read</span>
+                <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link">
+                  Read Review
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
